@@ -16,6 +16,15 @@ def main():
     # Measure the current CPU usage percentage over a 1-second interval (for a more accurate reading)
     print("CPU Usage (%):", psutil.cpu_percent(interval=1))
 
+    memory = psutil.virtual_memory()
+
+    print("\nMemory Information")
+    print("-" * 18)
+    print("Total Memory:", memory.total)
+    print("Used Memory:", memory.used)
+    print("Available Memory:", memory.available)
+    print("Memory Usage (%):", memory.percent)
+
 
 if __name__ == "__main__":
     main()
