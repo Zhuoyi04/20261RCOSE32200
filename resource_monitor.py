@@ -1,6 +1,11 @@
 import os
 import platform
 import psutil
+from datetime import datetime
+
+def save_report(filename, content):
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(content)
 
 def main():
     print("System Resource Monitor")
@@ -35,6 +40,22 @@ def main():
     print("Used Disk Space (GB):", round(disk.used / (1024 ** 3), 2))
     print("Free Disk Space (GB):", round(disk.free / (1024 ** 3), 2))
     print("Disk Usage (%):", disk.percent)
+
+    report = f"""
+        System Resource Monitor Report
+        Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+        System: {platform.system()}
+        Release: {platform.release()}
+        Machine: {platform.machine()}
+
+        CPU Usage: {psutil.cpu_percent(interval=1)}%
+        Memory Usage: {memory.percent}%
+        Disk Usage: {disk.percent}%
+    """
+
+    save_report("system_report.txt", report)
+    print("\nReport saved as system_report.txt")
 
 if __name__ == "__main__":
     main()
