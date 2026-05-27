@@ -2,8 +2,19 @@
 
 ## System Resource Monitor
 
-A small Python project for checking basic system resource information.
+A small Python-based system resource monitoring tool.
 
-## Notice
+## Features
 
-This repository does not contain source code from COSE322 Project #1 or Project #2.
+- Displays operating system information
+- Shows CPU core count and CPU usage
+- Shows memory usage
+- Shows disk usage
+- Saves a simple system report to a text file
+
+## How to Run
+
+Install the required package:
+
+```bash
+pip install -r requirements.txt
