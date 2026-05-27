@@ -1,3 +1,4 @@
+import os
 import platform
 import psutil
 
@@ -25,7 +26,8 @@ def main():
     print("Available Memory (GB):", round(memory.available / (1024 ** 3), 2))
     print("Memory Usage (%):", memory.percent)
 
-    disk = psutil.disk_usage("/")
+    # Check disk usage of the main system drive
+    disk = psutil.disk_usage(os.path.abspath(os.sep))
 
     print("\nDisk Information")
     print("-" * 16)
