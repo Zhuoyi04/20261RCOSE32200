@@ -20,11 +20,10 @@ def main():
 
     print("\nMemory Information")
     print("-" * 18)
-    print("Total Memory:", memory.total)
-    print("Used Memory:", memory.used)
-    print("Available Memory:", memory.available)
+    print("Total Memory (GB):", round(memory.total / (1024 ** 3), 2))
+    print("Used Memory (GB):", round(memory.used / (1024 ** 3), 2))
+    print("Available Memory (GB):", round(memory.available / (1024 ** 3), 2))
     print("Memory Usage (%):", memory.percent)
-
 
 if __name__ == "__main__":
     main()
