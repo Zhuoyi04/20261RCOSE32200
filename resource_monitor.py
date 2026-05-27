@@ -25,5 +25,14 @@ def main():
     print("Available Memory (GB):", round(memory.available / (1024 ** 3), 2))
     print("Memory Usage (%):", memory.percent)
 
+    disk = psutil.disk_usage("/")
+
+    print("\nDisk Information")
+    print("-" * 16)
+    print("Total Disk Space (GB):", round(disk.total / (1024 ** 3), 2))
+    print("Used Disk Space (GB):", round(disk.used / (1024 ** 3), 2))
+    print("Free Disk Space (GB):", round(disk.free / (1024 ** 3), 2))
+    print("Disk Usage (%):", disk.percent)
+
 if __name__ == "__main__":
     main()
