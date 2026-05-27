@@ -13,7 +13,8 @@ def main():
     print("-" * 15)
     print("Physical Cores:", psutil.cpu_count(logical=False))
     print("Total Cores:", psutil.cpu_count(logical=True))
-    print("CPU Usage (%):", psutil.cpu_percent())
+    # Measure the current CPU usage percentage over a 1-second interval (for a more accurate reading)
+    print("CPU Usage (%):", psutil.cpu_percent(interval=1))
 
 
 if __name__ == "__main__":
