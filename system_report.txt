@@ -1,0 +1,12 @@
+
+        System Resource Monitor Report
+        Generated at: 2026-05-28 01:48:08
+
+        System: Windows
+        Release: 11
+        Machine: AMD64
+
+        CPU Usage: 16.0%
+        Memory Usage: 76.8%
+        Disk Usage: 86.6%
+    
